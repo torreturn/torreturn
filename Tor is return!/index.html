@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Tor вернулся!</title>
+	<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css">
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.4/css/fontawesome.min.css" crossorigin="anonymous">
+	<link rel="stylesheet" type="text/css" href="style.css">
+	<link rel="icon" type="image/png" href="TorBrowser.png">
+</head>
+<body>
+	<div class="UpPanel">
+		<a href="torbrowser-install-win64-11.0.2_en-US.exe" download>Скачать Tor</a>
+			
+	</div>
+	<div class="header">
+		<h1>Tor забрали?<br>Мы вернули!</h1>
+
+		<img src="TorBrowser.png" class="onion">
+
+		<div class="headeMin">
+			<p>Мы стремимся распространить Tor браузер, т.к. поддерживаем инициативу свободы в интернете.</p>
+			<hr>
+			<p style="font-size: 20px;">Выполнено в рамках обучения, при нажатии на кнопку "Скачать Tor" на ваш компьютер установиться Tor browser.</p>
+		</div>
+		<img src="onion.png" style="width: 100%; bottom:0; position:absolute; left: 0;">
+	</div>
+	<script type="text/javascript" src="jquery-3.6.0.min.js"></script>
+	<script type="text/javascript">
+		$(function () {
+    		$(document).on('mousemove', function (e) {
+        		$('.onion').css({
+        	    	left: -e.pageX / 50 + 30,
+        	    	top: -e.pageY / 50 + 30
+        		});
+    		});
+		});
+	</script>
+</body>
+</html>

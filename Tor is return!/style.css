@@ -1,0 +1,81 @@
+html, body{
+  	height: 100%;
+  	overflow: hidden;
+  	margin: 0;
+  	background-color: #420c5d;
+}
+
+.header{
+	color: white;
+	overflow: hidden;
+	margin: 0;
+	width: 100%;
+	height: 100%;
+	text-align: center;
+	padding-top: 15vh;
+}
+
+.onion {
+    position: absolute;
+	width: 6%;
+	height: 8%;
+	margin: 10%;
+}
+
+h1{
+	font-size: 100px;
+}
+
+.headeMin{
+	max-width: 1000px;
+	margin: 6vh 37vh;
+	font-size: 30px;
+	text-align: center;
+}
+
+.UpPanel{
+	z-index: 1;
+	background-color: #350a4a;
+	width: 100%;
+	height: 80px;
+	font-size: 25px;
+	padding: 12.5px;
+	color: white;
+}
+
+a{
+	color: white;
+}
+
+a:link{text-decoration:none}
+
+.UpPanel a{
+  background-color:#420c5d;
+  display:inline-block;
+  position:relative;
+  margin: 0px 12.5px;
+  padding: 10px;
+  color:#fff;
+  transition:all 0.4s ease;
+  font-weight: bold;
+}
+
+.UpPanel a:before{
+  font-family:fontAwesome;
+  position:absolute;
+  font-style: normal;
+  font-weight: normal;
+  text-decoration: inherit;
+  font-size:28px;
+  border-radius:0 20px 0 0;
+  color:#000;
+  background-color:#fff;
+  opacity:0.3;
+  padding:18px;
+  top:0;
+  left:0;
+}
+
+.UpPanel a:hover{
+  background:#2c3e50;
+}
