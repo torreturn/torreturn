@@ -17,7 +17,7 @@ html, body{
 
 .onion {
     position: absolute;
-	width: 6%;
+	width: 8%;
 	height: 8%;
 	margin: 10%;
 }
@@ -28,7 +28,7 @@ h1{
 
 .headeMin{
 	max-width: 1000px;
-	margin: 6vh 37vh;
+	margin: 6vh 50vh;
 	font-size: 30px;
 	text-align: center;
 }
