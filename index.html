@@ -1,11 +1,106 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Ссылки на проэкты</title>
-  <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css">
-	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.4/css/fontawesome.min.css" crossorigin="anonymous">
+	<title></title>
 </head>
 <body>
-  <a href="Tor is return!/tor.html">Tor</a>
+	<style type="text/css">
+		@import url('https://fonts.googleapis.com/css?family=Josefin+Sans:400,600');
+
+body{
+  background-color: #E4E3D3;
+  font-family: 'Josefin Sans', sans-serif;
+}
+
+.container{
+  position:fixed;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin:auto;
+  flex-direction:column;
+}
+
+.heading{
+  text-align:center;
+  font-size:55px;
+  color:#2E2D4D;
+  margin:50px auto;
+}
+.btn, .btn2{
+  display:inline-block;
+  padding:15px 40px;
+  border-radius:4px;
+  box-shadow:2px 2px 2px rgba(0,0,0,0.5);
+  color:#fff;
+  font-weight:600;
+  text-transform:uppercase;
+  cursor:pointer;
+  margin:auto;
+  text-decoration:none;
+}
+.btn{
+  background-color: #020122;
+}
+.btn2{
+  background-color: #4d729e;
+}
+.ripple{
+  position: relative;
+  overflow:hidden;
+  left: 30px;
+  margin-top: 30px;
+}
+
+.ripple-effect{
+  display:inline-block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  height:0;
+  width:0;
+  border:2px solid rgba(255,255,255,0.3);
+  border-radius:5000px;
+  animation:ripple 1s ease forwards;
+  z-index:1;
+}
+.every{
+	margin-left: 40px;
+}
+@keyframes ripple{
+  0%{
+    transform:scale(0);
+  }
+  100%{
+    transform:scale(100);
+  }
+}
+	</style>
+<div class="every">
+	<h1>Ссылки на мои проэкты:</h1>
+
+		<a href="Tor is return!/tor.html" class="ripple btn">Tor is return!</a>
+		<br>
+		<a href="#" class="ripple btn2" >Не работает</a>
+</div>
+
+	<script type="text/javascript" src="jquery-3.6.0.min.js"></script>
+	<script type="text/javascript">
+		$(".ripple").on("click",function(event){
+$(this).append("<span class='ripple-effect'>");
+$(this).find(".ripple-effect").css({
+   left:event.pageX-$(this).position().left,
+    top:event.pageY-$(this).position().top
+  }).animate({
+    opacity: 0,
+  }, 1500, function() {
+   $(this).remove();
+  });
+});
+	</script>
 </body>
 </html>
