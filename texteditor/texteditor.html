@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Текстовый редактор</title>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" type="image/png" href="slider-content.png">
+  <style type="text/css">
+    body {
+      text-align: center;
+      font-family: Courier New, Courier;
+      font-size: 20px;
+      background-image: url(slider-content.png);
+      background-position: center center;
+      background-repeat: no-repeat;
+      background-attachment: fixed;
+      background-size: cover;
+      background-color: #464646;
+      color: #292929;
+    }
+
+    .editorSheet {
+      width: 80vw;
+      min-height: 50vw;
+      margin-left: 10vw;
+      border: solid;
+      border-width: 0px;
+      text-align: left;
+      background-color: rgba(255, 255, 255, 0.3);
+      -webkit-box-shadow: 6px 10px 9px 0px rgba(0, 0, 0, 0.75);
+      -moz-box-shadow: 6px 10px 9px 0px rgba(0, 0, 0, 0.75);
+      box-shadow: 6px 10px 9px 0px rgba(0, 0, 0, 0.75);
+      padding: 15px;
+    }
+
+    h1 {
+      font-size: 40px;
+      font-family: Tahoma;
+      font-weight: 900;
+    }
+
+  </style>
+</head>
+
+<body>
+  <h1>Текстовый редактор с автосохранением</h1>
+  <div id="editor" contenteditable="true" class="editorSheet">
+  </div>
+  <script>
+    if (localStorage.getItem('text_in_editor') !== null) {
+      document.getElementById('editor').innerHTML = localStorage.getItem('text_in_editor');
+    }
+    document.addEventListener('keydown', function (e) {
+      localStorage.setItem('text_in_editor', document.getElementById('editor').innerHTML);
+    });
+  </script>
+</body>
+</html>
