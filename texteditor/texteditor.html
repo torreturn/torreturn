@@ -80,6 +80,16 @@ document.addEventListener('keydown', function (e) {
     });
   }
 });
+
+
+
+var text = prompt('О какой теме вы хотели бы написать?');
+var time = prompt('Через какое время (в минутах)?');
+time = time * 60 * 1000;
+setTimeout(function () {
+  alert("Время вышло! Надеюсь вы успели написать текст по теме: " + text);
+  titleAlert();
+}, time);
   </script>
 </body>
 </html>
