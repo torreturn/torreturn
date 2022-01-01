@@ -48,6 +48,8 @@
   <h1>Текстовый редактор с автосохранением</h1>
   <div id="editor" contenteditable="true" class="editorSheet">
   </div>
+  <script type="text/javascript" src="http://yastatic.net/jquery/2.1.3/jquery.min.js"></script>
+  <script type="text/javascript" src="script.js"></script>
   <script>
     if (localStorage.getItem('text_in_editor') !== null) {
       document.getElementById('editor').innerHTML = localStorage.getItem('text_in_editor');
@@ -55,6 +57,29 @@
     document.addEventListener('keydown', function (e) {
       localStorage.setItem('text_in_editor', document.getElementById('editor').innerHTML);
     });
+
+    $(document).ready(function () {
+  fix_spell = function (data) {
+    data.forEach(function (elem) {
+      $('#text_field').val(
+        $('#text_field').val().replace(
+          elem['word'],
+          elem['s'][0] || elem['word']
+        )
+      );
+    });
+  }
+});
+document.addEventListener('keydown', function (e) {
+  if ((e.keyCode == 32) || (e.keyCode == 13)) {
+    var lines = $('#text_field').val().replace(/\r\n|\n\r|\n|\r/g, "\n").split("\n");
+    lines.forEach(function (line) {
+      if (line.length) {
+        $.getScript('http://speller.yandex.net/services/spellservice.json/checkText?text=' + line + '&callback=fix_spell');
+      }
+    });
+  }
+});
   </script>
 </body>
 </html>
