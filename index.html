@@ -53,38 +53,8 @@ body{
 btn3{
   background-color: #e1e68e;
 }
-.ripple{
-  position: relative;
-  overflow:hidden;
-  left: 30px;
-  margin-top: 30px;
-}
 
-.ripple-effect{
-  display:inline-block;
-  position: absolute;
-  top: 0;
-  left: 0;
-  height:0;
-  width:0;
-  border:2px solid rgba(255,255,255,0.3);
-  border-radius:5000px;
-  animation:ripple 1s ease forwards;
-  z-index:1;
-}
-.every{
-	margin-left: 40px;
-}
-@keyframes ripple{
-  0%{
-    transform:scale(0);
-  }
-  100%{
-    transform:scale(100);
-  }
-}
 	</style>
-<div class="every">
 	<h1>Ссылки на мои проэкты:</h1>
 
 		<a href="Tor is return!/tor.html" class="ripple btn">Tor is return!</a>
@@ -92,7 +62,7 @@ btn3{
 		<a href="texteditor/texteditor.html" class="ripple btn2" >Текстовый редактор</a>
 		<br>
 		<a href="form/form.html" class="ripple btn3" >Форма отправки</a>
-</div>
+
 	<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4680536081401780" crossorigin="anonymous">
 			</script>
 			<ins class="adsbygoogle" style="display:block; text-align:center;" data-ad-layout="in-article" data-ad-format="fluid" data-ad-client="ca-pub-4680536081401780"
@@ -102,19 +72,5 @@ btn3{
 
 			</script>
 
-	<script type="text/javascript" src="jquery-3.6.0.min.js"></script>
-	<script type="text/javascript">
-		$(".ripple").on("click",function(event){
-$(this).append("<span class='ripple-effect'>");
-$(this).find(".ripple-effect").css({
-   left:event.pageX-$(this).position().left,
-    top:event.pageY-$(this).position().top
-  }).animate({
-    opacity: 0,
-  }, 1500, function() {
-   $(this).remove();
-  });
-});
-	</script>
 </body>
 </html>
